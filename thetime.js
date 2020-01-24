@@ -16,19 +16,40 @@ function getTime() {
   weekday[6] = "Saturday";
   var formatWeekDay = weekday[currentTime.getDay()];
 
-  function getHour(currentTime) {
-    var hour = currentTime.getHours();
-    if (hour === 0) {
-      return '12 AM';
-    }else if ( hour < 12) {
-      return hour + ' AM ';
-    }else {
-      return hour + ' PM';
-    }
-  }
+          function getHour(currentTime) {
+            var hour = currentTime.getHours();
+            if (hour === 0) {
+              return '12 AM';
+            }else if ( hour < 12) {
+              return hour + ' AM ';
+            }else {
+              return hour + ' PM';
+            }
+          }
+
+          function formatSeconds(currentTime) {
+            seconds = currentTime.getSeconds();
+            if (seconds < 10) {
+              return '0' + seconds;
+            } else {
+              return seconds;
+            }
+          }
+
+          function formatMinutes(currentTime) {
+            minutes = currentTime.getMinutes();
+            if (minutes < 10) {
+              return '0' + minutes;
+            } else {
+              return minutes;
+            }
+          }
 
   timeElement = document.getElementById('time');
-  timeElement.innerHTML = 'Today is: ' + formatWeekDay + '<br \/> Current time is \: ' + getHour(currentTime) + ' : ' + currentTime.getMinutes() + ' : ' + currentTime.getSeconds();
+  timeElement.innerHTML = '<span>';
+  timeElement.innerHTML += 'Today is: ' + formatWeekDay;
+  timeElement.innerHTML += '<br \/> Current time is \: ' + getHour(currentTime) + ' : ' + formatMinutes(currentTime) + ' : ' + formatSeconds(currentTime);
+  timeElement.innerHTML += '</span>';
 }
 
 setInterval(getTime, 1000);
