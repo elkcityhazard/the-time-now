@@ -1,11 +1,47 @@
+html, body {
+  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #bfe0df;
+}
+
 .wrapper {
-  margin: 0 auto;
+  height: 100vh;
+  margin: auto;
+  max-height: calc(100vh - 40px);
   max-width: 968px;
   text-align: center;
   width: 75vw;
 }
 
-#time.span {
+.wrapper h1 {
+  color: #586f7c;
+}
+
+.wrapper > div {
+  border-radius: 10px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, .25);
+  margin-bottom: 40px;
+}
+
+#day {
+  background: #d6f8d6;
+  color: #0d1321;
   font-size: 2em;
   line-height: 2;
+}
+
+#day span {
+  color: orange;
+  font-weight: bolder;
+}
+
+#time {
+  background: #0d1321;
+  color: #d6f8d6;
+  font-weight: bold;
+  padding-bottom: 1.25em;
 }

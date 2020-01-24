@@ -3,7 +3,6 @@
 Sample Output : Today is : Tuesday.
 Current time is : 10 PM : 30 : 38
 */
-
 function getTime() {
   currentTime = new Date();
   var weekday = new Array(7);
@@ -45,11 +44,12 @@ function getTime() {
             }
           }
 
-  timeElement = document.getElementById('time');
-  timeElement.innerHTML = '<span>';
-  timeElement.innerHTML += 'Today is: ' + formatWeekDay;
+  var dayElement = document.getElementById('day');
+  dayElement.innerHTML = 'Hello, ';
+  dayElement.innerHTML += 'Today is: ' + '<span>' + formatWeekDay + '</span>';
+  var timeElement = document.getElementById('time');
+  timeElement.innerHTML = '';
   timeElement.innerHTML += '<br \/> Current time is \: ' + getHour(currentTime) + ' : ' + formatMinutes(currentTime) + ' : ' + formatSeconds(currentTime);
-  timeElement.innerHTML += '</span>';
-}
+  }
 
 setInterval(getTime, 1000);
