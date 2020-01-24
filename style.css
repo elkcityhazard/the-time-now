@@ -39,6 +39,10 @@ body {
   font-weight: bolder;
 }
 
+#day span:not(:first-child) {
+  color: red;
+}
+
 #time {
   background: #0d1321;
   color: #d6f8d6;

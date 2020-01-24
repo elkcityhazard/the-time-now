@@ -44,9 +44,29 @@ function getTime() {
             }
           }
 
+          function formatMonth(currentTime) {
+            var month = new Array(12);
+            month[0] = 'January';
+            month[1] = 'February';
+            month[2] = 'March';
+            month[3] = 'April';
+            month[4] = 'May';
+            month[5] = 'June';
+            month[6] = 'July';
+            month[7] = 'August';
+            month[8] = 'September';
+            month[9] = 'October';
+            month[10] = 'November';
+            month[11] = 'December';
+
+            return month[currentTime.getMonth()];
+          }
+
   var dayElement = document.getElementById('day');
   dayElement.innerHTML = 'Hello, ';
   dayElement.innerHTML += 'Today is: ' + '<span>' + formatWeekDay + '</span>';
+  dayElement.innerHTML += ', ' + '<span>' +formatMonth(currentTime) + '</span>';
+  dayElement.innerHTML += '<span> ' + currentTime.getDay() + '</span> <span> ' + currentTime.getFullYear() + '</span>';
   var timeElement = document.getElementById('time');
   timeElement.innerHTML = '';
   timeElement.innerHTML += '<br \/> Current time is \: ' + getHour(currentTime) + ' : ' + formatMinutes(currentTime) + ' : ' + formatSeconds(currentTime);
