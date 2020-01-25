@@ -73,7 +73,7 @@ function getTime() {
   dayElement.innerHTML = 'Hello, ';
   dayElement.innerHTML += 'Today is: ' + '<span>' + formatWeekDay + '</span>';
   dayElement.innerHTML += ', ' + '<span>' +formatMonth(currentTime) + '</span>';
-  dayElement.innerHTML += '<span> ' + currentTime.getDay() + '</span> <span> ' + currentTime.getFullYear() + '</span>';
+  dayElement.innerHTML += '<span> ' + currentTime.getDate() + '</span> <span> ' + currentTime.getFullYear() + '</span>';
   var timeElement = document.getElementById('time');
   timeElement.innerHTML = '';
   timeElement.innerHTML += '<br \/> Current time is \: ' + getHour(currentTime) + ' : ' + formatMinutes(currentTime) + ' : ' + formatSeconds(currentTime);
