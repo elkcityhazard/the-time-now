@@ -27,9 +27,17 @@ body {
   margin-bottom: 40px;
 }
 
-#day {
+.wrapper > div:nth-child(odd) {
   background: #d6f8d6;
   color: #0d1321;
+}
+
+.wrapper > div:nth-child(even) {
+background: #0d1321;
+color: #d6f8d6;
+}
+
+#day {
   font-size: 2em;
   line-height: 2;
 }
@@ -44,8 +52,31 @@ body {
 }
 
 #time {
-  background: #0d1321;
-  color: #d6f8d6;
   font-weight: bold;
   padding-bottom: 1.25em;
+}
+
+#info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+#info-container  div {
+  min-height: 30vh;
+  min-width: 25vw;
+  max-width: 30vw;
+}
+
+#info-container div:nth-child(odd) {
+  background: #d6f8d6;
+  color: #0d1321;
+}
+
+#info-container div:nth-child(even) {
+  background: #0d1321;
+  color: #d6f8d6;
 }

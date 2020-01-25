@@ -3,6 +3,13 @@
 Sample Output : Today is : Tuesday.
 Current time is : 10 PM : 30 : 38
 */
+
+
+
+/******************************
+*Output the time and the day
+*/
+
 function getTime() {
   currentTime = new Date();
   var weekday = new Array(7);
@@ -22,7 +29,7 @@ function getTime() {
             }else if ( hour < 12) {
               return hour + ' AM ';
             }else {
-              return hour + ' PM';
+              return (hour - 12) + ' PM';
             }
           }
 
@@ -73,3 +80,42 @@ function getTime() {
   }
 
 setInterval(getTime, 1000);
+
+/********************************
+* Calculate Leap year
+*/
+
+function leapYear(currentYear) {
+  currentYear = new Date();
+  currentYear = currentYear.getFullYear();
+  if ((currentYear % 100 === 0) ? (currentYear % 400 === 0) : (currentYear % 4 === 0)) {
+    return  currentYear + ' is a leap year.';
+} else {
+  return currentYear + ' is not a leap year.';
+  }
+}
+
+var leapElement = document.getElementById('leap-year');
+
+leapElement.innerHTML = '<h4>Leap Year: </h4>';
+leapElement.innerHTML +='<span>' + leapYear() + '</span>';
+
+
+
+/********************************
+* Calculate when january 1st falls on a sunday between 2020 and 2100
+*/
+
+sundayElement = document.getElementById('sunday-new-year');
+sundayElement.innerHTML ='<h4>January 1st On A Sunday: </h4>';
+sundayElement.innerHTML += '<ol>';
+for (var year= 2020; year <= 2120; year ++) {
+  var day = new Date(year, 0, 1);
+  if (day.getDay() === 0) {
+    sundayElement.innerHTML += '<li> ' + year + ' </li>';
+  } else {
+    continue;
+  }
+  };
+
+  sundayElement.innerHTML += '</ol>';
