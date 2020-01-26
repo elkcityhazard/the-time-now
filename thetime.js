@@ -85,6 +85,7 @@ setInterval(getTime, 1000);
 * Calculate Leap year
 */
 
+/*
 function leapYear(currentYear) {
   currentYear = new Date();
   currentYear = currentYear.getFullYear();
@@ -99,13 +100,13 @@ var leapElement = document.getElementById('leap-year');
 
 leapElement.innerHTML = '<h4>Leap Year: </h4>';
 leapElement.innerHTML +='<span>' + leapYear() + '</span>';
-
+*/
 
 
 /********************************
 * Calculate when january 1st falls on a sunday between 2020 and 2100
 */
-
+/*
 sundayElement = document.getElementById('sunday-new-year');
 sundayElement.innerHTML ='<h4>January 1st On A Sunday: </h4>';
 sundayElement.innerHTML += '<ol>';
@@ -119,3 +120,8 @@ for (var year= 2020; year <= 2120; year ++) {
   };
 
   sundayElement.innerHTML += '</ol>';
+
+*/
+  /********************************
+  * Function Statements and Expressions
+  */
